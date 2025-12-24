@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Image, Users, Lock, Download, BookOpen, Clock, ChevronRight, Play, Check, Paperclip, MessageSquare } from 'lucide-react';
 import { INITIAL_BLOG_POSTS } from '../constants';
-import heroVideo from '../assets/video.mp4';
-
+import hero from './hero.jpg';
 const SHOWCASE_IMAGES = [
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1600",
   "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1600",
@@ -51,19 +50,13 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col pt-20 bg-black text-white selection:bg-white selection:text-black overflow-hidden">
-      {/* Hero Section - video background */}
-      <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-20 scroll-mt-20 overflow-hidden">
-        {/* background video */}
-        <video
-          src={heroVideo}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        {/* gradient overlay to reproduce previous tint */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/70 z-10 pointer-events-none" />
+      {/* Hero Section - Updated with Ferris wheel cityscape background */}
+      <section 
+        className="relative min-h-screen w-full flex flex-col items-center justify-center pt-20 bg-cover bg-center scroll-mt-20"
+        style={{ 
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%), url(${hero})`
+        }}
+      >
         {/* Updated Cinematic Lighting for Teal/Orange palette */}
         <div className="moving-light bg-orange-600/20 top-[20%] right-[-10%] animate-float"></div>
         <div className="moving-light bg-teal-500/10 bottom-[-10%] left-[-10%] animate-float-delayed"></div>
@@ -157,7 +150,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-
+     
 
       {/* Single Big Sliding Image Section */}
       <section ref={addToRefs} className="fade-reveal py-40 bg-zinc-950/50 border-y border-white/5 scroll-mt-20">
