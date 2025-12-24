@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artworld Photography Photography Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              primary: {
+                50: "#f8f8f8",
+                100: "#f1f1f1",
+                200: "#e1e1e1",
+                300: "#cfcfcf",
+                400: "#b1b1b1",
+                500: "#8e8e8e",
+                600: "#717171",
+                700: "#4b4b4b",
+                800: "#2d2d2d",
+                900: "#1a1a1a",
+              },
+            },
+            animation: {
+              "pulse-slow": "pulse-slow 8s ease-in-out infinite",
+              float: "float 20s ease-in-out infinite",
+              "float-delayed": "float 25s ease-in-out infinite 2s",
+              "fade-in-up":
+                "fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+            },
+            keyframes: {
+              "pulse-slow": {
+                "0%, 100%": { opacity: 0.3 },
+                "50%": { opacity: 0.6 },
+              },
+              float: {
+                "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+                "33%": { transform: "translate(5%, 10%) scale(1.1)" },
+                "66%": { transform: "translate(-3%, -8%) scale(0.95)" },
+              },
+              "fade-in-up": {
+                "0%": { opacity: 0, transform: "translateY(30px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        transition: background-color 0.5s ease;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .action-button-glow {
+        position: relative;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .action-button-glow::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        width: 80%;
+        height: 15px;
+        background: #ff7e33;
+        filter: blur(25px);
+        opacity: 0.6;
+        transform: translateX(-50%);
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      .action-button-glow:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .action-button-glow:hover::after {
+        opacity: 0.9;
+        width: 100%;
+        filter: blur(35px);
+      }
+
+      .glass-card {
+        background: rgba(15, 15, 15, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .moving-light {
+        position: absolute;
+        width: 60vw;
+        height: 60vw;
+        border-radius: 50%;
+        filter: blur(150px);
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Custom scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .fade-reveal {
+        transition: opacity 1.2s ease, transform 1.2s ease;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .fade-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "recharts": "https://esm.sh/recharts@^3.6.0",
+          "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+          "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+          "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "react": "https://esm.sh/react@^19.2.3"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body
+    class="bg-black text-zinc-100 transition-colors duration-300 antialiased"
+  >
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

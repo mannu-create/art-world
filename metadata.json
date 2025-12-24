@@ -1,0 +1,7 @@
+{
+  "name": "Artworld Photography Photography Portal",
+  "description": "A high-end photography management system featuring secure client galleries, admin event management, and AI-powered photo analysis.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
