@@ -2,15 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Image, Users, Lock, Download, BookOpen, Clock, ChevronRight, Play, Check, Paperclip, MessageSquare } from 'lucide-react';
 import { INITIAL_BLOG_POSTS } from '../constants';
-import heroPoster from '../assets/hero-ferris.jpg';
+import heroPoster from '../assets/image.png';
 
 const SHOWCASE_IMAGES = [
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1600",
   "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1600",
-  "https://images.unsplash.com/photo-1465495910483-4c56a45a6c57?auto=format&fit=crop&q=80&w=1600",
+
   "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=1600",
   "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=1600",
-  "https://images.unsplash.com/photo-1540575861501-7ad05823c93e?auto=format&fit=crop&q=80&w=1600"
+  "https://img.freepik.com/free-photo/vintage-grunge-blue-concrete-texture-studio-wall-background-with-vignette_1258-28389.jpg?semt=ais_hybrid&w=740&q=80",
+  "https://www.thephoblographer.com/wp-content/uploads/2019/02/7a9bc571620633.5bcb93d1c992d.jpg"
 ];
 
 const Home: React.FC = () => {
@@ -191,11 +192,11 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+            {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 flex items-center justify-center scale-75 group-hover:scale-100 transition-transform duration-500">
                 <Play className="w-8 h-8 text-white fill-white" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
