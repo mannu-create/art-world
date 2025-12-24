@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Image, Users, Lock, Download, BookOpen, Clock, ChevronRight, Play, Check, Paperclip, MessageSquare } from 'lucide-react';
 import { INITIAL_BLOG_POSTS } from '../constants';
-import hero from './hero.jpg';
+import heroPoster from '../assets/hero-ferris.jpg';
+
 const SHOWCASE_IMAGES = [
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1600",
   "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1600",
@@ -54,7 +55,7 @@ const Home: React.FC = () => {
       <section 
         className="relative min-h-screen w-full flex flex-col items-center justify-center pt-20 bg-cover bg-center scroll-mt-20"
         style={{ 
-          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%), url(${hero})`
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%), url(${heroPoster})`
         }}
       >
         {/* Updated Cinematic Lighting for Teal/Orange palette */}
